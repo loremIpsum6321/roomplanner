@@ -1,0 +1,86 @@
+/*
+ * File: css/layout.css
+ * -------------
+ * Defines the main layout structure of the application page,
+ * positioning the controls panel and the canvas container.
+ * Relies on variables from config.css.
+ *
+ * Version History:
+ * - v1.0 - Initial creation. Sets up a flexbox layout for controls and canvas.
+ */
+
+ body {
+    /* Body already set to display: flex in base.css */
+    margin: 0; /* Ensure no default margin */
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh; /* Ensure container takes full height */
+    background-color: var(--color-background);
+}
+
+.controls-panel {
+    width: var(--controls-panel-width);
+    padding: var(--spacing-lg);
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    flex-shrink: 0; /* Prevent controls panel from shrinking */
+}
+
+.canvas-container {
+    flex-grow: 1; /* Allow canvas area to take remaining space */
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: center; /* Center canvas horizontally */
+    align-items: center; /* Center canvas vertically */
+    overflow: hidden; /* Prevent content spillover */
+}
+
+.control-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.control-group div {
+    margin-bottom: var(--spacing-md); /* Space between items in a group */
+}
+
+.control-group label {
+    margin-bottom: var(--spacing-xs); /* Space between label and input */
+}
+
+.control-group button {
+    width: 100%; /* Make buttons in controls fill width */
+    margin-top: var(--spacing-sm);
+}
+
+#object-library-buttons button {
+    margin-bottom: var(--spacing-sm); /* Space between object buttons */
+}
+
+#object-controls button {
+     margin-bottom: var(--spacing-sm); /* Space between object action buttons */
+     background-color: var(--color-secondary);
+     border-color: var(--color-secondary);
+}
+#object-controls button:hover:not(:disabled) {
+     background-color: #d9901f; /* Darker Orange */
+     border-color: #d9901f;
+}
+#object-controls button#delete-object-button {
+    background-color: var(--color-error);
+    border-color: var(--color-error);
+}
+#object-controls button#delete-object-button:hover:not(:disabled) {
+    background-color: #b40016; /* Darker Red */
+    border-color: #b40016;
+}
+
+
+/*
+// --- Usage Example ---
+// These styles are applied automatically based on the HTML structure using
+// classes like .app-container, .controls-panel, .canvas-container.
+*/

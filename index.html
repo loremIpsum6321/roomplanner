@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Layout Planner</title>
+    <link rel="stylesheet" href="css/config.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/canvas.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="controls-panel">
+            <h1>Room Planner</h1>
+
+            <fieldset class="control-group">
+                <legend>Room Dimensions (e.g., meters)</legend>
+                <div>
+                    <label for="room-width">Width:</label>
+                    <input type="number" id="room-width" value="5" min="1" step="0.1">
+                </div>
+                <div>
+                    <label for="room-length">Length:</label>
+                    <input type="number" id="room-length" value="4" min="1" step="0.1">
+                </div>
+                <button id="set-room-button">Set Room Size</button>
+            </fieldset>
+
+            <fieldset class="control-group">
+                <legend>Add Custom Object</legend>
+                
+                <div>
+                    <label for="custom-object-label">Label:</label>
+                    <input type="text" id="custom-object-label" value="My Item">
+                </div>
+               
+                <div>
+                    <label for="custom-object-width">Width (e.g., meters):</label>
+                    <input type="number" id="custom-object-width" value="1" min="0.1" step="0.1">
+                </div>
+                 <div>
+                    <label for="custom-object-length">Length (e.g., meters):</label>
+                    <input type="number" id="custom-object-length" value="1" min="0.1" step="0.1">
+                </div>
+                <button id="add-custom-object-button">Add Custom Object</button>
+            </fieldset>
+
+             <fieldset class="control-group" id="object-controls" style="display: none;">
+                <legend>Selected Object</legend>
+                <p>Object: <span id="selected-object-label">None</span></p>
+
+                <button id="rotate-object-button">Rotate 90°</button>
+                <button id="delete-object-button">Delete Object</button>
+            </fieldset>
+            <fieldset class="control-group">
+                <legend>Settings</legend>
+                <button id="clear-layout-button" style="background-color: var(--color-text-secondary); border-color: var(--color-text-secondary);">Clear Saved Layout</button>
+            </fieldset>
+
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="room-canvas">Your browser does not support the HTML canvas element.</canvas>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

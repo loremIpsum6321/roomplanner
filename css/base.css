@@ -1,0 +1,131 @@
+/*
+ * File: css/base.css
+ * -------------
+ * Basic styles, resets, and default typography for the application.
+ * Relies on variables defined in config.css.
+ *
+ * Version History:
+ * - v1.0 - Initial creation. Includes box-sizing reset and basic body styles.
+ */
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: var(--font-size-base); /* 16px by default */
+}
+
+body {
+    font-family: var(--font-family-main);
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    display: flex; /* Use flex for overall layout */
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #3a7bc8; /* Slightly darker blue */
+    border-color: #3a7bc8;
+}
+
+button:active:not(:disabled) {
+    background-color: #2a5d9a; /* Even darker blue */
+    border-color: #2a5d9a;
+}
+
+button:disabled {
+    background-color: #a0a0a0;
+    border-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    width: 100%; /* Default width for inputs */
+    margin-bottom: var(--spacing-sm);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-small);
+}
+
+fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+legend {
+    padding: 0 var(--spacing-sm);
+    font-weight: bold;
+    color: var(--color-text-primary);
+}
+
+/* Utility classes (can be expanded) */
+.u-text-center {
+    text-align: center;
+}
+
+.u-margin-bottom-md {
+    margin-bottom: var(--spacing-md);
+}
+
+/*
+// --- Usage Example ---
+// Basic elements like body, p, button are styled by default.
+// Apply utility class:
+// <div class="u-text-center">Centered Text</div>
+*/

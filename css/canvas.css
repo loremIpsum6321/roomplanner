@@ -1,0 +1,36 @@
+/*
+ * File: css/canvas.css
+ * -------------
+ * Styles specifically for the HTML canvas element and the visual
+ * representation of the room and objects drawn onto it (if applicable,
+ * though most visual styling happens via JS Canvas API).
+ * Includes border and background styles for the canvas itself.
+ *
+ * Version History:
+ * - v1.0 - Initial creation. Defines canvas appearance.
+ */
+
+ #room-canvas {
+    background-color: var(--canvas-background);
+    border: var(--canvas-border-width) solid var(--room-border-color);
+    display: block; /* Remove potential extra space below canvas */
+    max-width: 100%; /* Ensure canvas scales down within its container */
+    max-height: 100%;
+    /* Width and height attributes are set via JS for rendering size */
+    /* CSS width/height would scale the rendered image, which we don't want initially */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    cursor: grab; /* Default cursor for dragging */
+}
+
+#room-canvas:active {
+    cursor: grabbing; /* Cursor change during drag */
+}
+
+/* Note: Most object styling (fill, stroke, selection) is handled dynamically
+   within the CanvasRenderer.js using the Canvas 2D API drawing commands.
+   This CSS file primarily styles the <canvas> element itself. */
+
+/*
+// --- Usage Example ---
+// Styles are applied directly to the #room-canvas element in index.html.
+*/
